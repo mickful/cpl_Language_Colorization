@@ -1,0 +1,26 @@
+{
+    "name": "cpl",
+    "displayName": "cpl_language_support",
+    "description": "Lexer per il cpl",
+    "version": "0.0.1",
+    "publisher": "mickful",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cpl",
+            "aliases": ["cpl", "cpl"],
+            "extensions": [".cpl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cpl",
+            "scopeName": "source.cpl",
+            "path": "./syntaxes/cpl.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cpl",
+	"foldingStartMarker": "\\b(class|for|func|if|proc|repeat|switch|try|while)\\b",
+  "foldingStopMarker": "^\\s*(abstract|end|until)\\s*$",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#stringsdouble"
+		},
+		{
+			"include": "#stringssingle"
+		},
+		{
+			"include": "#stringstriple"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#commentsblock"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#datetime"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cpl",
+				"match": "\\b(assert|case|catch|class|Done|downto|each|else|elseif|end|event|finally|for|from|func|if|iif|import|in|inherited|Init|invariant|inverse|list|local|old|post|pre|proc|raise|redef|ref|repeat|result|sender|step|switch|this|thismodule|to|try|until|var|while|with)\\b"
+			},{
+				"name": "keyword.operator.new.cpl",
+				"match": "\\b(and|div|not|or)\\b"
+			},{
+				"name": "keyword.operator.expression.cpl",
+				"match": "@|:=|\\+|-(?=[^-])|\\*(?=[^/])|/(?=[^\\*])|%|\\(|\\)|\\[|\\]|\\{|\\}|\\?|!|\\.|:|;|,|<|>|="
+			}
+			,{
+				"name": "storage.type.cpl",
+				"match": "\\b(any|array|bool|clocktime|date|datetime|dict|float|int|long|str)\\b"
+			},{
+				"name": "constant.language.cpl",
+				"match": "\\b(false|False|FALSE|nil|true|True|TRUE)\\b"
+			},
+			{
+				"name": "storage.modifier.cpl",
+				"match": "\\b(abstract|const|default|final)\\b"
+			}]
+		},
+		"stringstriple": {
+			"name": "string.quoted.triple.cpl",
+			"begin": "<<",
+			"end": ">>",
+			"patterns": [
+			]
+		},
+		"stringsdouble": {
+			"name": "string.quoted.double.cpl",
+			"begin": "\"",
+			"end": "\"U?",
+			"patterns": [
+			]
+		},
+		"stringssingle": {
+			"name": "string.quoted.single.cpl",
+			"begin": "'",
+			"end": "'U?",
+			"patterns": [
+			]
+		},
+		"comments": {
+			"name": "comment.line.cpl",
+			"match": "--.*",
+			"patterns": [
+			]
+		},
+		"commentsblock": {
+			"name": "comment.block.cpl",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [
+			]
+		},
+		"number": {
+			"name": "constant.numeric.cpl",
+			"match": "0x[0-9a-f]+(\\.[0-9a-f]+|L)?|0X[0-9A-F]+(\\.[0-9A-F]+|L)?|\\b[0-9]+(\\.[0-9]+|L)?",
+			"patterns": [
+			]
+		},
+		"datetime": {
+			"name": "string.regexp.cpl",
+			"match": "#([0-9]+-[0-9]+-[0-9]+ +[0-9]+:[0-9]+(:[0-9]+(.[0-9]+)?)?|[0-9]+:[0-9]+(:[0-9]+(.[0-9]+)?)?|[0-9]+-[0-9]+-[0-9]+)#",
+			"patterns": [
+			]
+		}
+	},
+	"scopeName": "source.cpl"
+}
